@@ -30,7 +30,7 @@ const projects = [
     description:
       "Zesty is a AI based website to enable users to generate personalized recipes based on refrigerator ingredients.",
     stack: [{ name: "react" }, { name: "nextjs" }, { name: "tailwindcss" }],
-    image: "/images/1.png",
+    image: "/assets/EcoScan.png",
     live: "",
     github: "",
   },
@@ -40,10 +40,16 @@ const projects = [
     category: "Hackathon Winner Project",
     title: "EcoScan",
     description: "description of project 2",
-    stack: [{ name: "react" }, { name: "nextjs" }, { name: "tailwindcss" }],
-    image: "/images/1.png",
-    live: "",
-    github: "",
+    stack: [
+      { name: "HTML" },
+      { name: "CSS" },
+      { name: "JavaScript" },
+      { name: "NodeJS" },
+      { name: "Fireworks API" },
+    ],
+    image: "/assets/EcoScan.png",
+    live: "https://devpost.com/software/ecoscan-pz96vj",
+    github: "https://github.com/RuxueJ/SFHacks24",
   },
   {
     num: "03",
@@ -51,7 +57,7 @@ const projects = [
     title: "project 3",
     description: "description of project 3",
     stack: [{ name: "react" }, { name: "nextjs" }, { name: "tailwindcss" }],
-    image: "/images/1.png",
+    image: "/assets/EcoScan.png",
     live: "",
     github: "",
   },
@@ -61,13 +67,13 @@ const projects = [
     title: "project 4",
     description: "description of project 3",
     stack: [{ name: "react" }, { name: "nextjs" }, { name: "tailwindcss" }],
-    image: "/images/1.png",
+    image: "/assets/EcoScan.png",
     live: "",
     github: "",
   },
 ];
 
-const Work = () => {
+const Projects = () => {
   const [project, setProject] = useState(projects[0]);
 
   const handleSlideChange = (swiper) => {
@@ -173,6 +179,7 @@ const Work = () => {
                       <div className="relative w-full h-full">
                         <Image
                           src={project.image}
+                          alt="EcoScan Thumbnail"
                           fill
                           className="object-cover"
                         />
@@ -196,4 +203,122 @@ const Work = () => {
   );
 };
 
-export default Work;
+export default Projects;
+// "use client";
+
+// import { BsArrowDownRight } from "react-icons/bs";
+
+// import Link from "next/link";
+// import { Description } from "@radix-ui/react-dialog";
+// import { motion } from "framer-motion";
+// import Social from "@/components/Social";
+
+// const projects = [
+//   {
+//     num: "01 Full Stack Application",
+//     title: "Zesty",
+//     category: "AI and food",
+//     description:
+//       "Zesty is a AI based website to enable users to generate personalized recipes based on refrigerator ingredients.",
+//     href: "",
+//   },
+//   {
+//     num: "02 Hackathon Winner Project",
+//     title: "EcoScan",
+//     category: "AI and environment",
+//     description:
+//       "EcoScan is a AI based website to help users to sort the trash into three trash bins.",
+//     href: "https://devpost.com/software/ecoscan-pz96vj",
+//   },
+//   {
+//     num: "03 Multi-pleyer Game",
+//     title: "Uno Game",
+//     category: "Game and Entertainment",
+//     description: "Logo design",
+//     href: "",
+//   },
+//   {
+//     num: "04 OOP Java Game",
+//     title: "Tank Game",
+//     category: "Game and Entertainment",
+//     description: "SEO",
+//     href: "",
+//   },
+//   // {
+//   //   num: "05 Front end Project",
+//   //   title: "Music Visualization",
+//   //   category: "Art",
+//   //   description: "SEO",
+//   //   href: "",
+//   // },
+//   // {
+//   //   num: "05 Data Visualization Project",
+//   //   title: "Music Visualization",
+//   //   category: "Art",
+//   //   description: "SEO",
+//   //   href: "",
+//   // },
+//   // {
+//   //   num: "05 Data Visualization Project",
+//   //   title: "Music Visualization",
+//   //   category: "Art",
+//   //   description: "SEO",
+//   //   href: "",
+//   // },
+// ];
+// const Projects = () => {
+//   return (
+//     <section className="min-h-[80vh] flex flex-col justify-center py-12 xl:py-0">
+//       <div className="container mx-auto">
+//         <motion.div
+//           initial={{ opacity: 0 }}
+//           animate={{
+//             opacity: 1,
+//             transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+//           }}
+//           className="grid grid-cols-1 md:grid-cols-2 gap-[60px]"
+//         >
+//           {projects.map((project, index) => {
+//             return (
+//               <div
+//                 key={index}
+//                 className="flex-1 flex flex-col justify-center gap-6 group"
+//               >
+//                 {/* top */}
+//                 <div className="w-full flex justify-between items-center">
+//                   <div className="text-4xl font-extrabold text-outline text-transparent group-hover:text-outline-hover transition-all duration-500">
+//                     {project.num}
+//                   </div>
+//                   <Link
+//                     href={project.href}
+//                     className="w-[70px] h-[70px] rounded-full bg-white group-hover:bg-accent transition-all duration-500
+//                     flex justify-center items-center hover:-rotate-45"
+//                   >
+//                     <BsArrowDownRight className="text-primary text-3xl" />
+//                   </Link>
+//                 </div>
+
+//                 {/* title */}
+//                 <h2 className="text-[32px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">
+//                   {project.title}
+//                 </h2>
+
+//                 <h2 className="text-[32px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">
+//                   {project.category}
+//                 </h2>
+
+//                 {/* description */}
+//                 <p className="text-white/60">{project.description}</p>
+
+//                 {/* border */}
+//                 <div className="border-b border-white/20 w-full"></div>
+//               </div>
+//             );
+//           })}
+//         </motion.div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default Projects;
