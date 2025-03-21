@@ -4,8 +4,6 @@ import Stats from "@/components/Stats";
 import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
 
-import Timeline from "@/components/Timeline";
-
 const Home = () => {
   return (
     <section className="h-full">
