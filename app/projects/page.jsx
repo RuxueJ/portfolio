@@ -2,12 +2,13 @@
 
 import { motion } from "framer-motion";
 import React, { useState } from "react";
+import { useEffect } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 
-import { BsArrowUpRight, BsGithub } from "react-icons/bs";
+import { BsPlayCircle, BsGithub, BsFilePdf } from "react-icons/bs";
 
 import {
   Tooltip,
@@ -24,22 +25,55 @@ import WorkSliderBtns from "@/components/WorkSliderBtns";
 
 const projects = [
   {
-    num: "01",
-    category: "Full Stack Project",
+    num: "01 Zesty",
     title: "Zesty",
+    category: "Web Application",
     description:
       "Zesty is a AI based website to enable users to generate personalized recipes based on refrigerator ingredients.",
-    stack: [{ name: "react" }, { name: "nextjs" }, { name: "tailwindcss" }],
-    image: "/assets/EcoScan.png",
-    live: "",
-    github: "",
+    stack: [
+      { name: "React" },
+      { name: "TypeScript" },
+      { name: "Flask" },
+      { name: "Python" },
+      { name: "Gemini API" },
+      { name: "AWS" },
+      { name: "Nginx" },
+      { name: "Git" },
+    ],
+    images: [
+      "/assets/Zesty/Zesty_1.png",
+      "/assets/Zesty/Zesty_9.png",
+      "/assets/Zesty/Zesty_3.png",
+      "/assets/Zesty/Zesty_4.png",
+      "/assets/Zesty/Zesty_2.png",
+      "/assets/Zesty/Zesty_5.png",
+      "/assets/Zesty/Zesty_6.png",
+      "/assets/Zesty/Zesty_7.png",
+      "/assets/Zesty/Zesty_8.png",
+    ],
+
+    mobileImages: [
+      "/assets/Zesty/Zesty_1.png",
+      "/assets/Zesty/Zesty_9.png",
+      "/assets/Zesty/Zesty_3.png",
+      "/assets/Zesty/Zesty_4.png",
+      "/assets/Zesty/Zesty_2.png",
+      "/assets/Zesty/Zesty_5.png",
+      "/assets/Zesty/Zesty_6.png",
+      "/assets/Zesty/Zesty_7.png",
+      "/assets/Zesty/Zesty_8.png",
+    ],
+    live: "https://www.youtube.com/watch?v=WTBUxciHZ9o&t=5s",
+    github: "https://github.com/RuxueJ/Zesty",
   },
 
   {
-    num: "02",
-    category: "Hackathon Winner Project",
+    num: "02 EcoScan",
+
     title: "EcoScan",
-    description: "description of project 2",
+    category: "Web Application",
+    description:
+      "EcoScan is a web application that uses AI to analyze trash and determine the appropriate disposal bin—Compost, Recycle, Landfill, or No Bin.",
     stack: [
       { name: "HTML" },
       { name: "CSS" },
@@ -47,43 +81,199 @@ const projects = [
       { name: "NodeJS" },
       { name: "Fireworks API" },
     ],
-    image: "/assets/EcoScan.png",
+    images: [
+      "/assets/EcoScan/EcoScan.png",
+      "/assets/EcoScan/EcoScan_2.png",
+      "/assets/EcoScan/EcoScan_3.png",
+      "/assets/EcoScan/EcoScan_4.png",
+      "/assets/EcoScan/EcoScan_5.png",
+      "/assets/EcoScan/EcoScan_6.png",
+      "/assets/EcoScan/EcoScan_7.png",
+    ],
+
+    mobileImages: [
+      "/assets/EcoScan/EcoScan.png",
+      "/assets/EcoScan/EcoScan_2.png",
+      "/assets/EcoScan/EcoScan_3.png",
+      "/assets/EcoScan/EcoScan_4.png",
+      "/assets/EcoScan/EcoScan_5.png",
+      "/assets/EcoScan/EcoScan_6.png",
+      "/assets/EcoScan/EcoScan_7.png",
+    ],
     live: "https://devpost.com/software/ecoscan-pz96vj",
     github: "https://github.com/RuxueJ/SFHacks24",
   },
   {
-    num: "03",
-    category: "Multiplayer Game",
+    num: "03 UNO",
     title: "project 3",
-    description: "description of project 3",
-    stack: [{ name: "react" }, { name: "nextjs" }, { name: "tailwindcss" }],
-    image: "/assets/EcoScan.png",
-    live: "",
-    github: "",
+    category: "Game Application",
+    description:
+      "A web-based multiplayer UNO game that enables players to create rooms, chat with other participants, and enjoy the classic card game online.",
+    stack: [
+      { name: "React" },
+      { name: "JavaScript" },
+      { name: "Next.js" },
+      { name: "PostgreSQL" },
+      { name: "Socket.io" },
+    ],
+    images: [
+      "/assets/Uno/Uno_2.png",
+      "/assets/Uno/Uno_1.png",
+      "/assets/Uno/Uno_3.png",
+      "/assets/Uno/Uno_4.png",
+      "/assets/Uno/Uno_5.png",
+    ],
+    mobileImages: [
+      "/assets/Mobile_uno/mobile_uno_0.png",
+      "/assets/Mobile_uno/mobile_uno_1.png",
+      "/assets/Mobile_uno/mobile_uno_2.png",
+      "/assets/Mobile_uno/mobile_uno_3.png",
+      "/assets/Mobile_uno/mobile_uno_4.png",
+      "/assets/Mobile_uno/mobile_uno_5.png",
+    ],
+    live: "https://youtu.be/0j1kEpJ7KBg",
+    github: "https://github.com/RuxueJ/Uno",
+  },
+
+  {
+    num: "04 Tank Battle",
+    title: "project 3",
+    category: "Game Application",
+    description:
+      "A web-based multiplayer UNO game that enables players to create rooms, chat with other participants, and enjoy the classic card game online.",
+    stack: [{ name: "Java" }, { name: "OOP" }],
+    images: ["/assets/TankGame.png"],
+    mobileImages: ["/assets/TankGame.png"],
+    live: "https://www.youtube.com/watch?v=aejM3Vc4LkY",
+    github: "https://github.com/RuxueJ/2D_TankGame",
+  },
+
+  {
+    num: "05 Music Visualizer",
+    title: "project 3",
+    category: "Web Application",
+    description:
+      "A web-based multiplayer UNO game that enables players to create rooms, chat with other participants, and enjoy the classic card game online.",
+    stack: [
+      { name: "React" },
+      { name: "TypeScript" },
+      { name: "Next.js" },
+      { name: "PostgreSQL" },
+    ],
+    images: [
+      "/assets/Music_Visualizer/Music_Visualizer_1.png",
+      "/assets/Music_Visualizer/Music_Visualizer_2.png",
+      "/assets/Music_Visualizer/Music_Visualizer_3.png",
+      "/assets/Music_Visualizer/Music_Visualizer_4.png",
+    ],
+    mobileImages: [
+      "/assets/Music_Visualizer/Music_Visualizer_1.png",
+      "/assets/Music_Visualizer/Music_Visualizer_2.png",
+      "/assets/Music_Visualizer/Music_Visualizer_3.png",
+      "/assets/Music_Visualizer/Music_Visualizer_4.png",
+    ],
+    live: "https://youtu.be/MkqYqad77SA",
+    github: "https://github.com/RuxueJ/Music_Visualizer",
+  },
+
+  {
+    num: "06 Parallel Optimization of MML Using OpenMP",
+    title: "project 3",
+    category: "HPC",
+    description:
+      "Parallelizing matrix multiplication with OpenMP, evaluating performance at different concurrency levels and problem sizes, and comparing to CBLAS.",
+    stack: [
+      { name: "C++" },
+      { name: "Parallel Programming" },
+      { name: "OpenMP" },
+      { name: "LIKWID" },
+    ],
+    images: [
+      "/assets/Parallel_MMUL/Basic_MMUL_OpenMP.png",
+      "/assets/Parallel_MMUL/Block_MMUL_OpenMP.png",
+    ],
+    mobileImages: [
+      "/assets/Parallel_MMUL/Basic_MMUL_OpenMP.png",
+      "/assets/Parallel_MMUL/Block_MMUL_OpenMP.png",
+    ],
+    pdf: "assets/Parallel_MMUL/Parallel_MMUL.pdf",
   },
   {
-    num: "04",
-    category: "Multiplayer Game",
-    title: "project 4",
-    description: "description of project 3",
-    stack: [{ name: "react" }, { name: "nextjs" }, { name: "tailwindcss" }],
-    image: "/assets/EcoScan.png",
-    live: "",
-    github: "",
+    num: "07 Stencil Operation",
+    title: "project 3",
+    category: "HPC",
+    description:
+      "A web-based multiplayer UNO game that enables players to create rooms, chat with other participants, and enjoy the classic card game online.",
+    stack: [
+      { name: "C++" },
+      { name: "Convolutinoal Multiplication" },
+      { name: "distributed programming" },
+      { name: "MPI" },
+    ],
+    images: [
+      "/assets/Stencil_Operation/tile_decomposed.png",
+      "/assets/Stencil_Operation/Zebra_original.jpg",
+    ],
+    mobileImages: [
+      "/assets/Stencil_Operation/tile_decomposed.png",
+      "/assets/Stencil_Operation/Zebra_original.jpg",
+    ],
+    pdf: "/assets/Stencil_Operation/Stencil_Operation.pdf",
   },
+
+  // {
+  //   num: "08 Music Visualizer",
+  //   title: "project 3",
+  //   category: "Deep Learning",
+  //   description:
+  //     "A web-based multiplayer UNO game that enables players to create rooms, chat with other participants, and enjoy the classic card game online.",
+  //   stack: [
+  //     { name: "React" },
+  //     { name: "TypeScript" },
+  //     { name: "Next.js" },
+  //     { name: "PostgreSQL" },
+  //   ],
+  //   images: ["/assets/Uno/Uno_2.png"],
+  //   mobileImages: ["/assets/Mobile_uno/mobile_uno_0.png"],
+  //   live: "",
+  //   github: "https://github.com/RuxueJ/Uno",
+  // },
+
+  //   {
+  //     num: "09 ",
+  //     title: "project 3",
+  //     category: "Deep Learning",
+  //     description:
+  //       "A web-based multiplayer UNO game that enables players to create rooms, chat with other participants, and enjoy the classic card game online.",
+  //     stack: [
+  //       { name: "React" },
+  //       { name: "TypeScript" },
+  //       { name: "Next.js" },
+  //       { name: "PostgreSQL" },
+  //     ],
+  //     images: ["/assets/Uno/Uno_2.png"],
+  //     mobileImages: ["/assets/Mobile_uno/mobile_uno_0.png"],
+  //     live: "",
+  //     github: "https://github.com/RuxueJ/Uno",
+  //   },
+];
+
+const categories = [
+  "All",
+  "Web Application",
+  "Game Application",
+  "HPC",
+  "Deep Learning",
 ];
 
 const Projects = () => {
-  const [project, setProject] = useState(projects[0]);
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const handleSlideChange = (swiper) => {
-    // get current slide index
-
-    const currentIndex = swiper.activeIndex;
-    //update project state based on current slide index
-
-    setProject(projects[currentIndex]);
-  };
+  // Filter projects based on selected category
+  const filteredProjects =
+    selectedCategory === "All"
+      ? projects
+      : projects.filter((project) => project.category === selectedCategory);
 
   return (
     <motion.section
@@ -95,108 +285,151 @@ const Projects = () => {
       className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
     >
       <div className="container mx-auto">
-        <div className="flex flex-col xl:flex-row xl:gap-[30px]">
-          <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
-            <div className="flex flex-col gap-[30px] h-[50%]">
-              {/* outline num */}
-              <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
-                {project.num}
-              </div>
-
-              {/* category */}
-              <h2 className="text-[42px] font-bold leaing-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-                {project.category}
-              </h2>
-
-              {/* description */}
-              <p className="text-white/60">{project.description}</p>
-
-              {/* stack */}
-              <ul className="flex gap-4 ">
-                {project.stack.map((item, index) => {
-                  return (
-                    <li key={index} className="text-xl text-accent">
-                      {item.name}
-                      {/* add comma if not last item */}
-                      {index !== project.stack.length - 1 && ","}
-                    </li>
-                  );
-                })}
-              </ul>
-
-              {/* border */}
-              <div className="border border-white/20"></div>
-
-              {/* buttons */}
-              <div className="flex items-center gap-4">
-                {/* live project */}
-                <Link href={project.live}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
-                      </TooltipTrigger>
-
-                      <TooltipContent>
-                        <p>Live project</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
-
-                {/* github */}
-                <Link href={project.github}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsGithub className="text-white text-3xl group-hover:text-accent" />
-                      </TooltipTrigger>
-
-                      <TooltipContent>
-                        <p>Github</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
-              </div>
-            </div>
+        <div className="flex flex-col gap-10 xl:gap-[30px] justify-center items-center ">
+          {/* Filter Buttons */}
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
+            {categories.map((category) => (
+              <button
+                key={category}
+                className={`sm:w-auto sm:px-6 sm:py-3 text-sm px-6 py-2 font-semibold rounded-lg transition-all duration-300 
+                ${
+                  selectedCategory === category
+                    ? "bg-accent text-white"
+                    : "bg-gray-700 text-gray-300 hover:bg-gray-600"
+                }`}
+                onClick={() => setSelectedCategory(category)}
+              >
+                {category}
+              </button>
+            ))}
           </div>
-          <div className="w-full xl:w-[50%]">
-            <Swiper
-              spaceBetween={30}
-              slidesPerView={1}
-              className="xl:h-[520px] mb-12"
-              onSlideChange={handleSlideChange}
+          {filteredProjects.map((project, index) => (
+            <div
+              key={index}
+              className="flex flex-col w-full xl:w-[50%] xl:justify-between xl:order-none mb-8 xl:mb-0 xl:gap-[30px]"
             >
-              {projects.map((project, index) => {
-                return (
-                  <SwiperSlide key={index} className="w-full">
-                    <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
-                      {/* overlay */}
-                      <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10 "></div>
+              {/* Project details section */}
 
-                      {/* image */}
-                      <div className="relative w-full h-full">
-                        <Image
-                          src={project.image}
-                          alt="EcoScan Thumbnail"
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                );
-              })}
+              <div className="flex flex-col gap-[30px]">
+                {/* Project details */}
+                <div className="text-6xl leading-none font-extrabold text-transparent text-outline">
+                  {project.num}
+                </div>
 
-              {/*slider buttons*/}
+                {/* Project images swiper */}
+                <div className="w-full">
+                  <Swiper
+                    spaceBetween={30}
+                    slidesPerView={1}
+                    className="h-[460px]"
+                  >
+                    {project.images.map((image, imageIndex) => (
+                      <SwiperSlide key={imageIndex}>
+                        <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
+                          {/* Overlay */}
+                          <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
 
-              <WorkSliderBtns
-                containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%-22px)] xl:bottom-[0] z-20 w-full justify-between xl:w-max xl:justify-none"
-                btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transiton-all "
-              />
-            </Swiper>
-          </div>
+                          {/* Desktop Image - hidden on small screens */}
+                          <div className="relative w-full h-full hidden sm:block">
+                            <Image
+                              src={image}
+                              alt="Website Thumbnail"
+                              fill
+                              className="object-cover"
+                            />
+                          </div>
+
+                          {/* Mobile Image - shown only on small screens */}
+                          <div className="relative w-full h-full sm:hidden">
+                            <Image
+                              src={project.mobileImages[imageIndex]}
+                              alt="Website Thumbnail - Mobile"
+                              fill
+                              className="object-cover"
+                            />
+                          </div>
+                        </div>
+                      </SwiperSlide>
+                    ))}
+                    {/* Slider buttons */}
+
+                    <WorkSliderBtns
+                      containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%-22px)] xl:bottom-[0] z-20 w-full justify-between xl:w-max xl:justify-none"
+                      btnStyles="bg-white/10 hover:bg-white/30 backdrop-blur-md text-white text-[22px] w-[44px] h-[44px] flex justify-center items-center rounded-full transition-all duration-300 shadow-md hover:shadow-lg"
+                    />
+                  </Swiper>
+                </div>
+
+                <p className="text-white/60">{project.description}</p>
+
+                {/* Stack */}
+                <div className="flex">
+                  <ul className="flex flex-wrap gap-x-4 gap-y-2">
+                    {project.stack.map((item, index) => (
+                      <li key={index} className="text-xl text-accent">
+                        {item.name}
+                        {index !== project.stack.length - 1 && ","}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Buttons */}
+                <div className="flex items-center gap-4">
+                  {project.category === "HPC" ? (
+                    <Link
+                      href={project.pdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <TooltipProvider delayDuration={100}>
+                        <Tooltip>
+                          <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                            <BsFilePdf className="text-white text-3xl group-hover:text-accent" />
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p>View Paper</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
+                    </Link>
+                  ) : (
+                    <>
+                      {/* Live project */}
+                      <Link href={project.live}>
+                        <TooltipProvider delayDuration={100}>
+                          <Tooltip>
+                            <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                              <BsPlayCircle className="text-white text-3xl group-hover:text-accent" />
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p>Live project</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </TooltipProvider>
+                      </Link>
+                      {/* Github */}
+                      <Link href={project.github}>
+                        <TooltipProvider delayDuration={100}>
+                          <Tooltip>
+                            <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                              <BsGithub className="text-white text-3xl group-hover:text-accent" />
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p>Github</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </TooltipProvider>
+                      </Link>
+                    </>
+                  )}
+                </div>
+              </div>
+
+              {/* Border */}
+              <div className="border border-white/20 mt-8 mb-8"></div>
+            </div>
+          ))}
         </div>
       </div>
     </motion.section>
@@ -204,121 +437,3 @@ const Projects = () => {
 };
 
 export default Projects;
-// "use client";
-
-// import { BsArrowDownRight } from "react-icons/bs";
-
-// import Link from "next/link";
-// import { Description } from "@radix-ui/react-dialog";
-// import { motion } from "framer-motion";
-// import Social from "@/components/Social";
-
-// const projects = [
-//   {
-//     num: "01 Full Stack Application",
-//     title: "Zesty",
-//     category: "AI and food",
-//     description:
-//       "Zesty is a AI based website to enable users to generate personalized recipes based on refrigerator ingredients.",
-//     href: "",
-//   },
-//   {
-//     num: "02 Hackathon Winner Project",
-//     title: "EcoScan",
-//     category: "AI and environment",
-//     description:
-//       "EcoScan is a AI based website to help users to sort the trash into three trash bins.",
-//     href: "https://devpost.com/software/ecoscan-pz96vj",
-//   },
-//   {
-//     num: "03 Multi-pleyer Game",
-//     title: "Uno Game",
-//     category: "Game and Entertainment",
-//     description: "Logo design",
-//     href: "",
-//   },
-//   {
-//     num: "04 OOP Java Game",
-//     title: "Tank Game",
-//     category: "Game and Entertainment",
-//     description: "SEO",
-//     href: "",
-//   },
-//   // {
-//   //   num: "05 Front end Project",
-//   //   title: "Music Visualization",
-//   //   category: "Art",
-//   //   description: "SEO",
-//   //   href: "",
-//   // },
-//   // {
-//   //   num: "05 Data Visualization Project",
-//   //   title: "Music Visualization",
-//   //   category: "Art",
-//   //   description: "SEO",
-//   //   href: "",
-//   // },
-//   // {
-//   //   num: "05 Data Visualization Project",
-//   //   title: "Music Visualization",
-//   //   category: "Art",
-//   //   description: "SEO",
-//   //   href: "",
-//   // },
-// ];
-// const Projects = () => {
-//   return (
-//     <section className="min-h-[80vh] flex flex-col justify-center py-12 xl:py-0">
-//       <div className="container mx-auto">
-//         <motion.div
-//           initial={{ opacity: 0 }}
-//           animate={{
-//             opacity: 1,
-//             transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
-//           }}
-//           className="grid grid-cols-1 md:grid-cols-2 gap-[60px]"
-//         >
-//           {projects.map((project, index) => {
-//             return (
-//               <div
-//                 key={index}
-//                 className="flex-1 flex flex-col justify-center gap-6 group"
-//               >
-//                 {/* top */}
-//                 <div className="w-full flex justify-between items-center">
-//                   <div className="text-4xl font-extrabold text-outline text-transparent group-hover:text-outline-hover transition-all duration-500">
-//                     {project.num}
-//                   </div>
-//                   <Link
-//                     href={project.href}
-//                     className="w-[70px] h-[70px] rounded-full bg-white group-hover:bg-accent transition-all duration-500
-//                     flex justify-center items-center hover:-rotate-45"
-//                   >
-//                     <BsArrowDownRight className="text-primary text-3xl" />
-//                   </Link>
-//                 </div>
-
-//                 {/* title */}
-//                 <h2 className="text-[32px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">
-//                   {project.title}
-//                 </h2>
-
-//                 <h2 className="text-[32px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">
-//                   {project.category}
-//                 </h2>
-
-//                 {/* description */}
-//                 <p className="text-white/60">{project.description}</p>
-
-//                 {/* border */}
-//                 <div className="border-b border-white/20 w-full"></div>
-//               </div>
-//             );
-//           })}
-//         </motion.div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Projects;

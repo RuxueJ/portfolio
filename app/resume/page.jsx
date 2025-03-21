@@ -5,11 +5,23 @@ import {
   FaCss3,
   FaJs,
   FaReact,
-  FaFigma,
   FaNodeJs,
+  FaPython,
+  FaJava,
+  FaDatabase,
+  FaGitAlt,
+  FaDocker,
+  FaAws,
 } from "react-icons/fa";
-
-import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
+import {
+  SiTypescript,
+  SiNextdotjs,
+  SiGraphql,
+  SiMongodb,
+  SiPostgresql,
+  SiKubernetes,
+  SiJest,
+} from "react-icons/si";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -70,7 +82,7 @@ const experiences = {
     {
       company: "San Francisco State University",
       position: "Web Accessibility Evaluator",
-      duration: "May 2024 - Present",
+      duration: "May 2024 - Feb 2025",
     },
   ],
 };
@@ -93,32 +105,50 @@ const education = {
   ],
 };
 
-const skills = {
-  title: "My Skills",
-  description: "",
-  skillList: [
-    {
-      icon: <FaHtml5 />,
-      name: "html 5",
-    },
-    {
-      icon: <FaCss3 />,
-      name: "css 3",
-    },
-    {
-      icon: <FaJs />,
-      name: "javascript",
-    },
-    {
-      icon: <FaReact />,
-      name: "react.js",
-    },
-    {
-      icon: <FaNodeJs />,
-      name: "node.js",
-    },
-  ],
-};
+const skills = [
+  {
+    category: "Frontend",
+    skills: [
+      { icon: <FaHtml5 />, name: "HTML 5" },
+      { icon: <FaCss3 />, name: "CSS 3" },
+      { icon: <FaJs />, name: "JavaScript" },
+      { icon: <SiTypescript />, name: "TypeScript" },
+      { icon: <FaReact />, name: "React.js" },
+      { icon: <SiNextdotjs />, name: "Next.js" },
+    ],
+  },
+  {
+    category: "Backend",
+    skills: [
+      { icon: <FaNodeJs />, name: "Node.js" },
+      { icon: <FaPython />, name: "Python" },
+      { icon: <FaJava />, name: "Java" },
+      { icon: <SiGraphql />, name: "GraphQL" },
+    ],
+  },
+  {
+    category: "Databases",
+    skills: [
+      { icon: <FaDatabase />, name: "SQL & NoSQL" },
+      { icon: <SiMongodb />, name: "MongoDB" },
+      { icon: <SiPostgresql />, name: "PostgreSQL" },
+    ],
+  },
+  {
+    category: "DevOps & Cloud",
+    skills: [
+      { icon: <FaGitAlt />, name: "Git & GitHub" },
+      { icon: <FaDocker />, name: "Docker" },
+      { icon: <SiKubernetes />, name: "Kubernetes" },
+      { icon: <FaAws />, name: "AWS" },
+    ],
+  },
+  {
+    category: "Testing & CI/CD",
+    skills: [{ icon: <SiJest />, name: "Jest" }],
+  },
+];
+
 const Resume = () => {
   return (
     <motion.div
@@ -210,7 +240,7 @@ const Resume = () => {
                     {skills.description}
                   </p>
                 </div>
-                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
+                {/* <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
                   {skills.skillList.map((skill, index) => {
                     return (
                       <li key={index}>
@@ -230,7 +260,31 @@ const Resume = () => {
                       </li>
                     );
                   })}
-                </ul>
+                </ul> */}
+
+                {skills.map((category, index) => (
+                  <div
+                    key={index}
+                    className="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+                  >
+                    <h3 className="text-2xl font-semibold mb-4 text-accent">
+                      {category.category}
+                    </h3>
+                    <ul className="space-y-3">
+                      {category.skills.map((skill, i) => (
+                        <li
+                          key={i}
+                          className="flex items-center space-x-3 p-3 rounded-lg bg-gray-700 hover:bg-gray-600 transition"
+                        >
+                          <span className="text-3xl text-accent">
+                            {skill.icon}
+                          </span>
+                          <p className="text-lg">{skill.name}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
             </TabsContent>
 

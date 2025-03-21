@@ -4,37 +4,43 @@ import Stats from "@/components/Stats";
 import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
 
+import Timeline from "@/components/Timeline";
+
 const Home = () => {
   return (
     <section className="h-full">
       <div className="container mx-auto h-full">
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           {/* text */}
-          <div className="text-center xl:text-left order-2 xl:order-none">
-            <span className="text-xl">Software Developer</span>
-            <h1 className="h1 mb-6">
-              Hello I'm <br /> <span className="text-accent">Ruxue Jin</span>
-            </h1>
-            <p className="max-w-[500px] mb-9 text-white/80">
-              I excel at crafting elegant digital experiences and I am
-              proficient in various programming languages and technologies.
-            </p>
-            {/* btn and socials */}
-            <div className="flex flex-col xl:flex-row items-center gap-8">
-              <Button
-                variant="outline"
-                size="lg"
-                className="uppercase flex items-center gap-2"
+          <div className=" flex flex-row-reverse items-center justify-between xl:justify-start xl:flex-row">
+            <div className="text-center xl:text-left">
+              <h1 className=" mb-6 xl:h1">
+                <span className="text-accent ">Ruxue Jin</span>
+              </h1>
+
+              <p className="text-l xl:text-3xl mb-6">
+                Master student of computer science
+              </p>
+              <a
+                href="https://www.sfsu.edu/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent underline text-l xl:text-3xl"
               >
-                <span>Download CV</span>
-                <FiDownload className="text-xl" />
-              </Button>
-              <div className="mb-8 xl:mb-0">
-                <Social
-                  containerStyles="flex gap-6"
-                  iconStyles="w-9 h-9 border border-accent rounded-full flex 
+                SFSU
+              </a>
+
+              <p className="text-l mb-6 mt-6 xl:text-3xl">Software Developer</p>
+
+              {/* btn and socials */}
+              <div className="flex flex-col xl:flex-row items-center gap-8">
+                <div className="mb-8 xl:mb-0">
+                  <Social
+                    containerStyles="flex gap-6"
+                    iconStyles="w-9 h-9 border border-accent rounded-full flex 
                   justify-center items-center text-accent hover:bg-accent transition-all duration-500"
-                />
+                  />
+                </div>
               </div>
             </div>
           </div>

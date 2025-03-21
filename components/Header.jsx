@@ -11,16 +11,13 @@ const Header = () => {
         {/* logo */}
         <Link href="/">
           <h1 className="text-4xl font-semibold">
-            Ruxue Jin <span className="text-accent">.</span>
+            R. Jin <span className="text-accent">.</span>
           </h1>
         </Link>
 
         {/*desktop nav & hire me button */}
         <div className="hidden xl:flex  items-center gap-8">
           <Nav />
-          <Link href="/">
-            <Button>Hire Me</Button>
-          </Link>
         </div>
 
         {/*mobile nav */}

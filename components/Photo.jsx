@@ -15,7 +15,7 @@ const Photo = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2.4, duration: 0.4, ease: "easeInOut" }}
-          className="w-[380px] h-[380px] xl:w-[580px] xl:h-[580px] mix-blend-lighten absolute rounded-full overflow-hidden ]"
+          className="w-[200px] h-[200px] xl:w-[580px] xl:h-[580px] mix-blend-lighten absolute rounded-full overflow-hidden ]"
         >
           <Image
             src="/assets/portfolio (2).jpg"
@@ -29,7 +29,7 @@ const Photo = () => {
 
         {/* circle */}
         <motion.svg
-          className="w-[380px] xl:w-[580px] h-[380px] xl:h-[580px]"
+          className="w-[200px] xl:w-[580px] h-[200px] xl:h-[580px]"
           fill="transparent"
           viewBox="0 0 580 580"
           xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +37,7 @@ const Photo = () => {
           <motion.circle
             cx="290"
             cy="290"
-            r="320"
+            r="290"
             stroke="#00ff99"
             strokeWidth="4"
             strokeLinecap="round"
