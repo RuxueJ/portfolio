@@ -29,7 +29,7 @@ const projects = [
     title: "Zesty",
     category: "Web Application",
     description:
-      "Zesty is a AI based website to enable users to generate personalized recipes based on refrigerator ingredients.",
+      "Zesty is a AI based website to enable users to generate recipe based on dish image, scan the food in your refrigerator with camera, and generate personalized recipes based on pantry ingredients.",
     stack: [
       { name: "React" },
       { name: "TypeScript" },
@@ -108,7 +108,7 @@ const projects = [
     title: "project 3",
     category: "Game Application",
     description:
-      "A web-based multiplayer UNO game that enables players to create rooms, chat with other participants, and enjoy the classic card game online.",
+      "A web-based multiplayer UNO game that allows players to create custom rooms, chat in real-time, and experience the classic card game with friends and others online.",
     stack: [
       { name: "React" },
       { name: "JavaScript" },
@@ -140,7 +140,7 @@ const projects = [
     title: "project 3",
     category: "Game Application",
     description:
-      "A web-based multiplayer UNO game that enables players to create rooms, chat with other participants, and enjoy the classic card game online.",
+      "A Java-based two-player game where each player starts with three lives and can activate special powers, including speed, fire, and invisibility, to outplay their opponent. ",
     stack: [{ name: "Java" }, { name: "OOP" }],
     images: ["/assets/TankGame.png"],
     mobileImages: ["/assets/TankGame.png"],
@@ -153,11 +153,11 @@ const projects = [
     title: "project 3",
     category: "Web Application",
     description:
-      "A web-based multiplayer UNO game that enables players to create rooms, chat with other participants, and enjoy the classic card game online.",
+      "A web application that visualizes the sounds of various instruments, including piano, guitar, drum, zheng, and xylophone, through dynamic visualizers like FFT, snow, and circle effects.",
     stack: [
       { name: "React" },
       { name: "TypeScript" },
-      { name: "Next.js" },
+      { name: "P5.js" },
       { name: "PostgreSQL" },
     ],
     images: [
@@ -197,13 +197,15 @@ const projects = [
       "/assets/Parallel_MMUL/Block_MMUL_OpenMP.png",
     ],
     pdf: "assets/Parallel_MMUL/Parallel_MMUL.pdf",
+    github:
+      "https://github.com/RuxueJ/Parallel-Matrix-Multiplication-with-OpenMP-and-LIKWID-Hardware-Performance-Counters",
   },
   {
     num: "07 Stencil Operation",
     title: "project 3",
     category: "HPC",
     description:
-      "A web-based multiplayer UNO game that enables players to create rooms, chat with other participants, and enjoy the classic card game online.",
+      "A distributed program that applies stencil operations to process 2D images, leveraging tile decomposition and MPI for parallelization.",
     stack: [
       { name: "C++" },
       { name: "Convolutinoal Multiplication" },
@@ -219,6 +221,7 @@ const projects = [
       "/assets/Stencil_Operation/Zebra_original.jpg",
     ],
     pdf: "/assets/Stencil_Operation/Stencil_Operation.pdf",
+    github: "https://github.com/RuxueJ/Distributed-Memory-Sobel-with-MPI",
   },
 
   //   {
@@ -401,21 +404,23 @@ const Projects = () => {
                           </Tooltip>
                         </TooltipProvider>
                       </Link>
+
                       {/* Github */}
-                      <Link href={project.github}>
-                        <TooltipProvider delayDuration={100}>
-                          <Tooltip>
-                            <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                              <BsGithub className="text-white text-3xl group-hover:text-accent" />
-                            </TooltipTrigger>
-                            <TooltipContent>
-                              <p>Github</p>
-                            </TooltipContent>
-                          </Tooltip>
-                        </TooltipProvider>
-                      </Link>
                     </>
                   )}
+
+                  <Link href={project.github}>
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                          <BsGithub className="text-white text-3xl group-hover:text-accent" />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>Github</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Link>
                 </div>
               </div>
 

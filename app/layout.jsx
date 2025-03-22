@@ -4,6 +4,7 @@ import { Description } from "@radix-ui/react-dialog";
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
+import SlideTransition from "@/components/SlideTransition";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -21,7 +22,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={jetbrainsMono.variable}>
         <Header />
-        <StairTransition />
+
+        {/* <SlideTransition> {children}</SlideTransition> */}
 
         <PageTransition>{children}</PageTransition>
       </body>
