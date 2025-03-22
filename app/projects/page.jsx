@@ -251,6 +251,12 @@ const categories = [
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleSlideChange = (swiper) => {
+    setCurrentIndex(swiper.realIndex); // Update the current index when slide changes
+  };
+
   // Filter projects based on selected category
   const filteredProjects =
     selectedCategory === "All"
@@ -301,6 +307,8 @@ const Projects = () => {
                 {/* Project images swiper */}
                 <div className="w-full">
                   <Swiper
+                    onSlideChange={handleSlideChange} // Update currentIndex when slide changes
+                    loop={false} // Disable looping to avoid going back from the last image to the first one
                     spaceBetween={30}
                     slidesPerView={1}
                     className="h-[460px]"
@@ -333,11 +341,14 @@ const Projects = () => {
                         </div>
                       </SwiperSlide>
                     ))}
+
                     {/* Slider buttons */}
 
                     <WorkSliderBtns
                       containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%-22px)] z-20 w-full justify-between xl:w-full xl:justify-between"
                       btnStyles="bg-black/60 hover:bg-black/80 backdrop-blur-md text-white text-[22px] w-[44px] h-[44px] flex justify-center items-center rounded-full transition-all duration-300 shadow-md hover:shadow-lg"
+                      currentIndex={currentIndex} // Pass current index
+                      totalImages={project.images.length} // Pass total images count
                     />
                   </Swiper>
                 </div>
