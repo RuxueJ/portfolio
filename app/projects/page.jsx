@@ -316,7 +316,6 @@ const Projects = () => {
                             <Image
                               src={image}
                               alt="Website Thumbnail"
-                          
                               layout="fill"
                               className="object-cover"
                             />
@@ -337,7 +336,7 @@ const Projects = () => {
                     {/* Slider buttons */}
 
                     <WorkSliderBtns
-                      containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%-22px)] xl:bottom-[0] z-20 w-full justify-between xl:w-max xl:justify-none"
+                      containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%-22px)] z-20 w-full justify-between xl:w-full xl:justify-between"
                       btnStyles="bg-white/10 hover:bg-white/30 backdrop-blur-md text-white text-[22px] w-[44px] h-[44px] flex justify-center items-center rounded-full transition-all duration-300 shadow-md hover:shadow-lg"
                     />
                   </Swiper>
