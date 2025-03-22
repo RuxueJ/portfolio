@@ -221,24 +221,6 @@ const projects = [
     pdf: "/assets/Stencil_Operation/Stencil_Operation.pdf",
   },
 
-  // {
-  //   num: "08 Music Visualizer",
-  //   title: "project 3",
-  //   category: "Deep Learning",
-  //   description:
-  //     "A web-based multiplayer UNO game that enables players to create rooms, chat with other participants, and enjoy the classic card game online.",
-  //   stack: [
-  //     { name: "React" },
-  //     { name: "TypeScript" },
-  //     { name: "Next.js" },
-  //     { name: "PostgreSQL" },
-  //   ],
-  //   images: ["/assets/Uno/Uno_2.png"],
-  //   mobileImages: ["/assets/Mobile_uno/mobile_uno_0.png"],
-  //   live: "",
-  //   github: "https://github.com/RuxueJ/Uno",
-  // },
-
   //   {
   //     num: "09 ",
   //     title: "project 3",
@@ -334,7 +316,8 @@ const Projects = () => {
                             <Image
                               src={image}
                               alt="Website Thumbnail"
-                              fill
+                          
+                              layout="fill"
                               className="object-cover"
                             />
                           </div>
