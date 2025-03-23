@@ -27,19 +27,17 @@ const links = [
 const MobileNav = () => {
   const pathname = usePathname();
 
-  // const [isSheetOpen, setIsSheetOpen] = useState(false);
-
   return (
     <Sheet>
       <SheetTrigger className="flex justify-center">
         <CiMenuFries className="text-[32px] text-accent" />
       </SheetTrigger>
-      <SheetContent className="flex flex-col">
+      <SheetContent className="flex flex-col ">
         <div className="mt-32 mb-40 text-center text-2xl">
           <Link href="/">
             <h1 className="text-4xl font-semibold">
-              <SheetClose>
-                Ruxue<span className="text-accent">.</span>
+              <SheetClose className="text-white">
+                Ruxue<span className=" text-[#00ff99]">.</span>
               </SheetClose>
             </h1>
           </Link>
@@ -50,8 +48,9 @@ const MobileNav = () => {
               key={index}
               href={link.path}
               className={`${
-                link.path === pathname && "text-accent border-b-2 border-accent"
-              } text-xl capitalize hover:text-accent transition-all`}
+                link.path === pathname &&
+                "text-[#00ff99] border-b-2 border-accent"
+              } text-xl capitalize text-white hover:text-[#00ff99] transition-all`}
             >
               <SheetClose>{link.name}</SheetClose>
             </Link>

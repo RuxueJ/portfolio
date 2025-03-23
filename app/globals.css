@@ -3,9 +3,53 @@
 @tailwind utilities;
 
 @layer base {
-  body {
+  :root {
+    --accent: #00ff99; /* Dark accent color */
+    --background: #1a202c; /* Dark mode background */
+    --foreground: #ffffff; /* Dark mode text color */
+    --border: rgba(255, 255, 255, 0.2); /* 20% white border */
+    --text-outline: #000000; /* Outline color for dark mode */
+  }
+  
+  .light {
+    --accent: #185a40; /* Light accent color */
+    --background: #f5f5f5; /* Softer off-white background */
+    --foreground: #222222; /* Darker gray text for better readability */
+    --border: rgba(0, 0, 0, 0.1); /* Light gray border */
+    --text-outline: #ffffff; /* Outline color for light mode */
+  }
+  
+  .text-foreground {
+    color: var(--foreground); /* Use the appropriate text color */
+  }
+  
+  
+  /* Text with outline effect */
+  .text-outline {
+    -webkit-text-stroke: 1px var(--text-outline); /* Outline effect */
+    color: var(--foreground); /* Ensure text color is set */
+  }
+  
+
+  /* body {
     @apply font-primary bg-primary text-white leading-loose;
-  } /* Your custom base styles here */
+  } Your custom base styles here */
+
+  body {
+    @apply font-primary leading-loose;
+    background-color: var(--background);
+    color: var(--foreground);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Accent color for text and background */
+  .text-accent {
+    color: var(--accent);
+  }
+
+  .bg-accent {
+    background-color: var(--accent);
+  }
 
   .h1 {
     @apply text-[48px] xl:text-[80px] leading-[1.1] font-semibold;

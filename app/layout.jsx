@@ -3,8 +3,8 @@ import "./globals.css";
 import { Description } from "@radix-ui/react-dialog";
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
-import StairTransition from "@/components/StairTransition";
-import SlideTransition from "@/components/SlideTransition";
+
+import Providers from "./provider";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -19,13 +19,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={jetbrainsMono.variable}>
-        <Header />
+        <Providers attribute="class">
+          <div className="min-h-screen bg-background text-foreground">
+            <Header />
 
-        {/* <SlideTransition> {children}</SlideTransition> */}
-
-        <PageTransition>{children}</PageTransition>
+            <PageTransition>{children}</PageTransition>
+          </div>
+        </Providers>
       </body>
     </html>
   );

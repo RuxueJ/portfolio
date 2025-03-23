@@ -303,9 +303,13 @@ const Projects = () => {
 
               <div className="flex flex-col gap-[30px]">
                 {/* Project details */}
-                <div className="text-6xl leading-none font-extrabold text-transparent text-outline">
+
+                <div className="text-6xl leading-none font-extrabold text-outline text-opacity-50">
                   {project.num}
                 </div>
+                {/* <div className="text-6xl leading-none font-extrabold text-transparent text-outline">
+                  {project.num}
+                </div> */}
 
                 {/* Project images swiper */}
                 <div className="w-full">
@@ -356,7 +360,7 @@ const Projects = () => {
                   </Swiper>
                 </div>
 
-                <p className="text-white/60">{project.description}</p>
+                <p className="text-foreground">{project.description}</p>
 
                 {/* Stack */}
                 <div className="flex">
@@ -396,7 +400,7 @@ const Projects = () => {
                         <TooltipProvider delayDuration={100}>
                           <Tooltip>
                             <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                              <BsPlayCircle className="text-white text-3xl group-hover:text-accent" />
+                              <BsPlayCircle className="foreground text-3xl group-hover:text-accent" />
                             </TooltipTrigger>
                             <TooltipContent>
                               <p>Live project</p>
@@ -413,7 +417,7 @@ const Projects = () => {
                     <TooltipProvider delayDuration={100}>
                       <Tooltip>
                         <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                          <BsGithub className="text-white text-3xl group-hover:text-accent" />
+                          <BsGithub className="foreground text-3xl group-hover:text-accent" />
                         </TooltipTrigger>
                         <TooltipContent>
                           <p>Github</p>
@@ -425,7 +429,10 @@ const Projects = () => {
               </div>
 
               {/* Border */}
-              <div className="border border-white/20 mt-8 mb-8"></div>
+              <div
+                className="border mt-8 mb-8"
+                style={{ borderColor: "var(--border)" }}
+              ></div>
             </div>
           ))}
         </div>

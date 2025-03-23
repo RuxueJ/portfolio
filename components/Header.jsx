@@ -1,12 +1,15 @@
+// "use client";
 import React from "react";
 import Link from "next/link";
 // import { Button } from "./ui/button";
 import Nav from "./Nav";
 import MobileNav from "./MobileNav";
+import ThemeSwitch from "./ThemeSwitch";
+// import { useState, useEffect } from "react";
 
 const Header = () => {
   return (
-    <header className="py-8 xl:py-12 text-white">
+    <header className="py-8 xl:py-12">
       <div className="container mx-auto flex justify-between items-center">
         {/* logo */}
         <Link href="/">
@@ -14,6 +17,8 @@ const Header = () => {
             R. Jin <span className="text-accent">.</span>
           </h1>
         </Link>
+
+        <ThemeSwitch />
 
         {/*desktop nav & hire me button */}
         <div className="hidden xl:flex  items-center gap-8">
